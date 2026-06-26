@@ -1,0 +1,47 @@
+//
+// Do any local configuration here
+//
+
+zone "shreyas.test" {
+
+	type master;
+	file "/etc/bind/db.shreyas.test";
+
+};
+
+
+
+
+zone "college.test" {
+
+	type master;
+	file "/etc/bind/db.college.test";
+
+};
+
+
+
+zone "23.168.192.in-addr.arpa" {
+
+	type master;
+	file "/etc/bind/db.192.168.23";
+
+};
+
+
+
+zone "block-rpz.test" {
+
+	type master;
+	file "/etc/bind/db.block-rpz.test";
+
+};
+
+
+
+zone "attacker.test" {
+
+	type master;
+	file "/etc/bind/db.attacker.test";
+
+};

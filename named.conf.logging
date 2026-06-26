@@ -1,0 +1,47 @@
+logging {
+
+
+
+ channel query_log {
+
+  file "/var/cache/bind/query.log" versions 3 size 10m;
+
+  severity info;
+
+  print-time yes;
+
+ };
+
+
+
+ channel rpz_log {
+
+  file "/var/cache/bind/rpz.log" versions 3 size 10m;
+
+  severity info;
+
+  print-time yes;
+
+ };
+
+
+
+
+
+category queries {
+
+ query_log;
+
+ };
+
+
+
+category rpz {
+
+ rpz_log;
+
+ };
+
+
+
+};

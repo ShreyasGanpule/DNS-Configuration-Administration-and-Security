@@ -1,0 +1,30 @@
+$TTL 86400
+
+; ' @ ' expands to college.test 
+
+; Start of Authority Record of Zone, every Zone must have atleast one 
+
+
+@ IN SOA ns1.college.test. admin.college.test. (
+	2026061001 ;version no. of zone in YYYY MM DD NN format meaning 2026-06-10 version 01
+	3600 ;refresh=check after ever 3600 seconds if zone changed
+	1800 ;retry=if slave (secondary) dns server cannot contact master (primary) dns server try again in 30 minutes
+	604800 ;how long can slave (secondary) can hold data
+	86400) ;default negative cache TTL
+
+
+
+;Name Server Record, every Zone must have atleast one
+
+@ IN NS ns1.college.test.
+
+
+ns1 IN A 192.168.23.128
+
+;A record created in zone 
+@  IN A 192.168.23.128
+
+;CNAME record
+www IN CNAME college.test.
+
+	

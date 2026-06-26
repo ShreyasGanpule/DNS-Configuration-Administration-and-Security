@@ -1,0 +1,13 @@
+options {
+	directory "/var/cache/bind";
+
+	recursion yes;
+
+	allow-query { any; };
+
+	response-policy{ zone "block-rpz.test";  };
+
+	listen-on-v6 { any; };
+
+	dnssec-validation auto;
+};

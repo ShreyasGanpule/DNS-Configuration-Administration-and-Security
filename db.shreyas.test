@@ -1,0 +1,36 @@
+$TTL 86400
+
+; ' @ ' expands to shreyas.test 
+
+; Start of Authority Record of Zone, every Zone must have atleast one 
+; SOA record says the zone is managed by primary dns server i.e ns1.shreyas.test
+; Contact information of administrator i.e admin@shreyas.test, the first ' . ' is interpreted as ' @ '
+
+@ IN SOA ns1.shreyas.test. admin.shreyas.test. (
+	2026060801 ;version no. of zone in YYYY MM DD NN format meaning 2026-06-08 version 01
+	3600 ;refresh=check after ever 3600 seconds if zone changed
+	1800 ;retry=if slave (secondary) dns server cannot contact master (primary) dns server try again in 30 minutes
+	604800 ;how long can slave (secondary) can hold data
+	86400) ;default negative cache TTL
+
+
+
+;Name Server Record, every Zone must have atleast one
+;Says the authoritative server for the ' shreyas.test ' zone is ' ns1.corp.test '
+
+@ IN NS ns1.shreyas.test.
+
+
+
+;A record mapping the ns1.shreyas.test. to ip 
+;You declared the above ns record so the dns must know what is ip address of ns1.shreyas.test
+
+ns1 IN A 192.168.23.128
+
+;A record created in zone (for webserver)
+@  IN A 192.168.23.128
+
+;CNAME record
+www IN CNAME shreyas.test.
+
+	
