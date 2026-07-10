@@ -22,26 +22,9 @@ MITRE ATT&CK Mapping (T1572 – Protocol Tunneling)
 
 
 Lab Architecture:
-                 +----------------+
-                 | Ubuntu Client  |
-                 +----------------+
-                         |
-                  DNS Queries
-                         |
-                         ▼
-+------------------------------------------------------+
-|             Ubuntu DNS Server (BIND9)                |
-|------------------------------------------------------|
-| • Authoritative DNS                                 |
-| • Recursive DNS                                     |
-| • Response Policy Zone (RPZ)                        |
-| • DNS Query Logging                                 |
-| • RPZ Logging                                       |
-|------------------------------------------------------|
-| Hosted Website (Nginx)                              |
-+------------------------------------------------------+
-                         |
-                Wireshark Monitoring
+
+<img width="236" height="335" alt="image" src="https://github.com/user-attachments/assets/c299337c-ef9e-4601-9227-29de3c9dd178" />
+
 
 
 
